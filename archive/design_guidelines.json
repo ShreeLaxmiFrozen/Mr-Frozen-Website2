@@ -1,0 +1,109 @@
+{
+  "project_name": "Mr. Frozen Marketing Website",
+  "theme": "light",
+  "archetype": "1 (Organic & Earthy) blended with 4 (Swiss & High-Contrast)",
+  "design_philosophy": "Professional, premium, export-ready. A hyper-clean aesthetic that builds absolute trust with foreign B2B buyers (like Singapore), combining fresh organic greens with industrial precision and hygiene. Avoid generic template looks. Emphasize manufacturing scale, zero-chemical processes, and heritage.",
+  "colors": {
+    "primary": "#1E5631",
+    "primary_hover": "#164024",
+    "secondary": "#4C9A2A",
+    "accent": "#E6B325",
+    "background_base": "#FDFDF9",
+    "surface": "#FFFFFF",
+    "surface_glass": "rgba(255, 255, 255, 0.8)",
+    "text_dark": "#0F1A12",
+    "text_muted": "#475E4D",
+    "border": "#DCE6DF",
+    "error": "#D9381E",
+    "success": "#1E5631"
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "IBM Plex Sans",
+    "h1": "text-5xl sm:text-6xl tracking-tighter font-bold leading-none text-[#0F1A12]",
+    "h2": "text-3xl sm:text-4xl tracking-tight font-semibold leading-tight text-[#0F1A12]",
+    "h3": "text-xl sm:text-2xl tracking-tight font-medium text-[#0F1A12]",
+    "body": "text-base leading-relaxed text-[#475E4D]",
+    "label": "text-sm uppercase tracking-[0.2em] font-semibold text-[#1E5631]",
+    "font_install_instructions": "Import 'Outfit' and 'IBM Plex Sans' from Google Fonts."
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-20 md:py-32",
+    "grid_system": "Use The Bento Grid Protocol (Mode A: Tetris Grid) for Capabilities and Features. Asymmetric bento grids to highlight scale, trucks, and cold storage alongside stats.",
+    "radius": "rounded-none or max rounded-md (2px to 6px) to maintain a B2B industrial precision feel.",
+    "shadows": "shadow-sm for subtle lift, avoid heavy drop shadows. Use 1px borders (#DCE6DF) to define edges crisply."
+  },
+  "components": {
+    "buttons": "Flat background with 1px subtle border. Hover: Slight lift (-translate-y-1) and darken background. Primary CTA in #1E5631 text-white. Secondary CTA in transparent background, border-#1E5631, text-#1E5631.",
+    "cards": "Solid #FFFFFF background, 1px border (#DCE6DF), no heavy shadows. Strict optical alignment.",
+    "navigation": "Sticky glassmorphism header (backdrop-blur-xl bg-[#FDFDF9]/80) with 1px bottom border (#DCE6DF). Must have visible navigation links on desktop, avoid hamburger menu on desktop.",
+    "forms": "Strictly use Shadcn Input, Textarea, Select components. Customize border to #DCE6DF. Focus state: ring-2 ring-[#1E5631]/20 border-[#1E5631]. Must include attributes like data-testid='b2b-inquiry-form'."
+  },
+  "motion": {
+    "hover_states": "transition-all duration-200 ease-in-out",
+    "scroll_effects": "Use lenis for smooth scrolling if possible. Subtle fade-in-up (framer-motion) for bento grid children."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1632640107771-80c37386cfcd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxmcmVzaCUyMGdyZWVuJTIwcGVhcyUyMG1hY3JvJTIwZHJvcHxlbnwwfHx8fDE3ODE2ODQwODF8MA&ixlib=rb-4.1.0&q=85",
+        "category": "hero_background",
+        "description": "Vibrant green peas in a bowl - use for the main hero overlay or product showcase to highlight natural green/no chemical."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1716643863806-989dd76ae093?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwxfHxzdGFpbmxlc3MlMjBzdGVlbCUyMGZhY3Rvcnl8ZW58MHx8fHwxNzgxNjg0MDkzfDA&ixlib=rb-4.1.0&q=85",
+        "category": "capabilities_manufacturing",
+        "description": "Clean stainless steel factory interior - use in the 'Manufacturing & Quality Standards' section."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1695222833131-54ee679ae8e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwcmVmcmlnZXJhdGVkJTIwdHJ1Y2slMjBkZWxpdmVyeXxlbnwwfHx8fDE3ODE2ODQwODF8MA&ixlib=rb-4.1.0&q=85",
+        "category": "logistics_trucks",
+        "description": "White refrigerated semi-truck on the road - use to represent the 18-21 tonne reefer supply capability."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1632640110804-58827a6b37fd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMGdyZWVuJTIwcGVhcyUyMG1hY3JvJTIwZHJvcHxlbnwwfHx8fDE3ODE2ODQwODF8MA&ixlib=rb-4.1.0&q=85",
+        "category": "product_close_up",
+        "description": "Macro shot of green peas - use for blanch test/quality assurance section."
+      }
+    ],
+    "icons": "Use lucide-react for UI icons (Chevron, Mail, Phone, MapPin, CheckCircle)."
+  },
+  "photography_guide": {
+    "description": "This is a custom photography brief for Mr. Frozen to replace placeholder images with actual high-end brand assets. Provide this to your professional photographer.",
+    "shot_list": [
+      {
+        "subject": "The Blanch Test & Raw Material",
+        "instructions": "Macro/close-up shots of the A-grade peas directly after blanching. Ensure lighting highlights the natural green color without looking artificial. Emphasize 'No ice padding' by showing dry, perfectly frozen IQF products."
+      },
+      {
+        "subject": "Factory Cleanliness & Manufacturing",
+        "instructions": "Wide, well-lit architectural shots of the stainless steel machinery and cold storage rooms. Include staff wearing full PPE (hairnets, gloves, coats) interacting with the production line to visually prove hygiene standards."
+      },
+      {
+        "subject": "Logistics & Scale",
+        "instructions": "Drone or wide-angle shots of the 18-21 tonne reefer trucks parked at the loading docks. Action shots of the 6-tonne distributor trucks being loaded."
+      },
+      {
+        "subject": "15% Protein Soya Chaap",
+        "instructions": "Food-styling studio shots of the raw Soya Chaap highlighting its soft texture, perhaps being sliced or pulled apart slightly to show the high-protein matrix. Place alongside fresh ingredients."
+      },
+      {
+        "subject": "Heritage & Trust Signals",
+        "instructions": "A professional portrait of the founders/team inside the 35-year-old cold storage facility. High-resolution shot of the Amar Ujala award."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a professional, export-ready B2B marketing site. No purple/teal gradients. Use #FDFDF9 base and #1E5631 primary.",
+    "Implement a sticky header with standard nav links (About, Products, Quality, Export, Contact).",
+    "Hero Section: High-impact layout. Headline should focus on 'Premium IQF Vegetables & High-Protein Soya Chaap' targeting foreign B2B buyers.",
+    "Products Section: Showcase Peas, Carrots, Cauliflower, Soya Chaap, Cheese, Fries, Tikkis. Use grid or bento layout.",
+    "Quality Standards: Emphasize the Blanch Test, naturally green, no chemicals, no ice padding.",
+    "Capabilities & Logistics: Detail the 18-21 tonne reefer trucks, 6 tonne distributor delivery, 35-year heritage, and contract packaging.",
+    "Trust & Export Readiness: Highlight the Amar Ujala award and Moti Mahal client.",
+    "Include a 'Photography Guide' section on the site (perhaps hidden from public but accessible to admins, or presented as a dedicated module in the output for the client to read) - actually just present the guide nicely to the user in the completion summary.",
+    "Inquiry Form: Create a B2B contact form (Name, Company, Country, Product Interest, Quantity, Message) utilizing Shadcn. Store in DB (mocked or actual if backend is set up). Provide clear contact info (Email, Phone, WhatsApp).",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}

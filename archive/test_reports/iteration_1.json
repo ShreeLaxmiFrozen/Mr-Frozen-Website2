@@ -1,0 +1,42 @@
+{
+  "summary": "Full E2E backend + frontend test of Mr. Frozen marketing site. 8/8 backend pytest cases pass (root brand, inquiry create happy path, 422 for missing name/email/country, 422 for invalid email, list inquiries, stats). Frontend: site-nav (sticky), hero & CTAs, all 9 section data-testids present, Contact mailto:/tel:/wa.me hrefs correct, nav-cta-inquiry anchors to #inquiry, happy-path inquiry submission (buyer-type=importer, 2 product checkboxes, country=Singapore) triggers POST /api/inquiries, success block + sonner success toast appear, send-another resets form. UI-submitted inquiry verified to persist via GET /api/inquiries. One minor spec deviation: empty-form submission shows browser's native HTML5 validation tooltip (because <Input> fields have `required`) instead of the JS sonner toast 'Please fill name, email and country.' — API is still NOT called, so the protective behaviour is preserved, but the expected toast text never displays.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "InquiryForm",
+        "issue": "Native browser HTML5 'Please fill out this field' tooltip fires instead of the intended sonner toast 'Please fill name, email and country.' when required fields are empty. Cause: name/email/country <Input> have `required` attribute which short-circuits the JS onSubmit handler. Either remove `required` to let the JS toast run, or add noValidate to the <form>.",
+        "selector": "[data-testid=\"b2b-inquiry-form\"]",
+        "priority": "LOW"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_inquiries.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Optional: Add `noValidate` to the inquiry <form> (or drop the `required` attribute on name/email/country Inputs) so the custom sonner toast 'Please fill name, email and country.' is what users see on empty submit, as per spec."
+  ],
+  "critical_code_review_comments": [
+    "server.py: deprecated FastAPI `@app.on_event(\"shutdown\")` — migrate to lifespan handler (non-blocking).",
+    "Backend has no auth on POST /api/inquiries — public form is open to spam; consider rate-limiting / captcha before production.",
+    "GET /api/inquiries is also unauthenticated and exposes buyer PII (email, phone) to anyone — should be admin-only.",
+    "InquiryForm.jsx: status code 422 detail array is shown only for first error (err?.response?.data?.detail?.[0]?.msg) — fine for now but could be more user-friendly."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_inquiries.py"
+  ],
+  "success_rate": {"backend": "100%", "frontend": "95%"},
+  "test_credentials": "N/A (no auth in app)",
+  "seed_data_creation": "Created 2 inquiry rows via API (test_buyer@example.com) and UI (test_ui_buyer@example.com) — both safe TEST_ prefixed data in db.inquiries collection.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend tests live at /app/backend/tests/test_inquiries.py. App has no auth. The only known gap is the empty-form toast text being replaced by native HTML5 validation; everything else works end-to-end including DB persistence.",
+  "rca of the issue": "Empty-submit toast: the form Input components carry HTML `required`. When the user clicks Submit with empty required fields, the browser's built-in constraint validation displays its native popup ('Please fill out this field') and aborts the submit event — so the React `onSubmit` handler that calls `toast.error('Please fill name, email and country.')` is never invoked. Fix options: (a) add `noValidate` to the <form>, (b) drop the `required` prop from the Inputs and rely solely on the JS check, or (c) keep both and accept the native UX. Network confirmed no POST is made, so functionally inquiries are still protected — only the toast wording differs from the spec."
+}

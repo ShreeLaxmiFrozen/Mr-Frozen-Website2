@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --mf-primary: #1E5631;
+    --mf-primary-hover: #164024;
+    --mf-secondary: #4C9A2A;
+    --mf-accent: #E6B325;
+    --mf-bg: #FDFDF9;
+    --mf-surface: #FFFFFF;
+    --mf-text: #0F1A12;
+    --mf-text-muted: #475E4D;
+    --mf-border: #DCE6DF;
+}
+
+body {
+    margin: 0;
+    background-color: var(--mf-bg);
+    color: var(--mf-text);
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading { font-family: 'Outfit', system-ui, sans-serif; letter-spacing: -0.02em; }
+.font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+.mf-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mf-primary);
+    font-weight: 600;
+}
+
+.mf-grain {
+    position: relative;
+}
+.mf-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+}
+
+.mf-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--mf-border), transparent);
+}
+
+/* hover lift */
+.lift { transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, border-color 200ms ease; }
+.lift:hover { transform: translateY(-2px); }
+
+/* marquee */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+.marquee-track {
+    display: inline-flex;
+    animation: marquee 40s linear infinite;
+}
+
+/* fade in up */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeUp 0.7s ease-out both; }
+
+::selection { background: #1E5631; color: #FDFDF9; }
+
+@layer base {
+    :root {
+        --background: 60 33% 98%;
+        --foreground: 140 25% 8%;
+        --card: 0 0% 100%;
+        --card-foreground: 140 25% 8%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 140 25% 8%;
+        --primary: 141 49% 23%;
+        --primary-foreground: 60 33% 98%;
+        --secondary: 100 60% 38%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 120 8% 95%;
+        --muted-foreground: 140 12% 32%;
+        --accent: 44 79% 53%;
+        --accent-foreground: 140 25% 8%;
+        --destructive: 8 79% 49%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 130 17% 88%;
+        --input: 130 17% 88%;
+        --ring: 141 49% 23%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+}

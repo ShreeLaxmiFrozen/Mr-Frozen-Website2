@@ -1,0 +1,157 @@
+import React from "react";
+import { Leaf, Drumstick, Sun, Snowflake } from "lucide-react";
+
+const PACK = {
+  peas: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/lojpl01j_ChatGPT%20Image%20Jun%2019%2C%202026%20at%2007_40_56%20PM.png",
+  chaap: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/wtnzpc7t_ChatGPT%20Image%20Jun%2020%2C%202026%20at%2007_42_49%20PM.png",
+  corn: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/wazccabn_7a6f49ea-8f5f-475b-b87f-18097b17d229.png",
+};
+
+const products = [
+  {
+    name: "Frozen Green Peas",
+    tag: "Hero Product",
+    desc: "100% natural, naturally green and sweet — sourced from our trusted farmer network. Preservatives-free, uniform size.",
+    icon: Leaf,
+    img: PACK.peas,
+    kind: "pack",
+    badges: ["100% Natural", "Preservatives Free", "Uniform Size"],
+    packs: ["200 g", "500 g", "1 kg", "5 kg"],
+    size: "lg",
+  },
+  {
+    name: "Frozen Veg Soya Chaap",
+    tag: "Signature",
+    desc: "Protein-rich, pure soya. No added colour. Super-soft, restaurant-grade — perfected over years of recipe refinement.",
+    icon: Drumstick,
+    img: PACK.chaap,
+    kind: "pack",
+    badges: ["No Added Colour", "Protein Rich", "100% Vegetarian"],
+    packs: ["500 g"],
+    size: "md",
+  },
+  {
+    name: "American Sweet Corn",
+    tag: "Sweet & Juicy",
+    desc: "Bright, plump sweet corn kernels with natural sweetness locked in. No added colour. No preservatives. Just farm-fresh corn.",
+    icon: Sun,
+    img: PACK.corn,
+    kind: "pack",
+    badges: ["No Added Colour", "Preservatives Free", "Super Tasty"],
+    packs: ["500 g", "1 kg"],
+    size: "md",
+  },
+  {
+    name: "Cauliflower",
+    tag: "Snow-White Florets",
+    desc: "Hand-cut, snow-white florets — sized, blanched and quick-frozen at peak. No chemicals, no whitening agents.",
+    icon: Snowflake,
+    img: "/media/cauliflower.jpg",
+    kind: "image",
+    badges: ["A-Grade", "No Chemicals"],
+    size: "sm",
+  },
+  {
+    name: "Carrots",
+    tag: "Farm-Fresh IQF",
+    desc: "Diced carrots — graded for size and sweetness, blanched and IQF-frozen straight from the field.",
+    icon: Snowflake,
+    img: "/media/carrots.jpg",
+    kind: "image",
+    badges: ["A-Grade", "Uniform Dice"],
+    size: "sm",
+  },
+];
+
+export default function Products() {
+  return (
+    <section id="products" data-testid="products-section" className="border-b border-[#DCE6DF] bg-[#FDFDF9]">
+      <div className="px-6 md:px-12 lg:px-24 py-20 md:py-28">
+        <div className="grid lg:grid-cols-12 gap-8 items-end mb-12">
+          <div className="lg:col-span-6">
+            <p className="mf-eyebrow">02 — Product range</p>
+            <h2 className="mt-4 font-heading text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Farm-sourced, frozen at peak — no added colour, no preservatives.
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-8 text-[#475E4D]">
+            We buy direct from farmers, hand-grade every batch and freeze it
+            quickly to lock in the sweetness, the green and the nutrition.
+            Available in retail packs and bulk packs to suit distributor,
+            restaurant and export demand.
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {products.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <article
+                key={p.name}
+                data-testid={`product-card-${i}`}
+                className="group bg-[#FDFDF9] flex flex-col"
+              >
+                {/* Image area — blends into section background, no inner container colour */}
+                <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden">
+                  {p.kind === "pack" ? (
+                    <img
+                      src={p.img}
+                      alt={`${p.name} packaging`}
+                      loading="lazy"
+                      className="max-h-[92%] max-w-[92%] w-auto h-auto object-contain drop-shadow-[0_18px_40px_rgba(15,26,18,0.18)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                    />
+                  ) : (
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                    />
+                  )}
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-[#0F1A12] text-[#FDFDF9] px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.2em] opacity-90 group-hover:opacity-100 transition-opacity">
+                    <Icon className="w-3 h-3" /> {p.tag}
+                  </span>
+                </div>
+
+                {/* Text — highlights on hover */}
+                <div className="mt-5 px-1 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5">
+                  <h3 className="font-heading text-lg sm:text-xl font-semibold leading-tight text-[#0F1A12] transition-colors duration-300 group-hover:text-[#1E5631]">
+                    {p.name}
+                  </h3>
+                  <p className="text-sm mt-2 leading-relaxed text-[#475E4D] transition-colors duration-300 group-hover:text-[#0F1A12]">
+                    {p.desc}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {p.badges.map((b) => (
+                      <span
+                        key={b}
+                        className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#1E5631] border border-[#1E5631]/30 bg-[#FDFDF9] px-2 py-0.5 transition-all duration-300 group-hover:bg-[#1E5631] group-hover:text-[#FDFDF9] group-hover:border-[#1E5631]"
+                      >
+                        {b}
+                      </span>
+                    ))}
+                  </div>
+                  {p.packs && (
+                    <div className="mt-4 border-t border-[#DCE6DF] pt-3" data-testid={`product-packs-${i}`}>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#475E4D]">Available pack sizes</p>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {p.packs.map((w) => (
+                          <span
+                            key={w}
+                            className="inline-flex items-center bg-[#0F1A12] text-[#FDFDF9] px-2.5 py-1 text-[11px] font-heading font-semibold tracking-tight transition-colors duration-300 group-hover:bg-[#1E5631]"
+                          >
+                            {w}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
