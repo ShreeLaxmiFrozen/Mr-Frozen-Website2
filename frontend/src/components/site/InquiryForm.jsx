@@ -191,7 +191,7 @@ export default function InquiryForm() {
               <Field label="Company">
                 <Input data-testid="inquiry-company" value={form.company} onChange={(e) => update("company", e.target.value)} placeholder="Company / brand" className="rounded-none" />
               </Field>
-              <Field label="Email">
+              <Field label="Email *">
                 <Input data-testid="inquiry-email" type="email" value={form.email} onChange={(e) => update("email", e.target.value)} placeholder="you@company.com" className="rounded-none" />
               </Field>
               <Field label="Phone / WhatsApp *">
