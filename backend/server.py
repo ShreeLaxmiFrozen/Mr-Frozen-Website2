@@ -179,6 +179,7 @@ async def send_inquiry_email(inq: Inquiry) -> None:
         logger.info("Inquiry email sent for %s → %s", inq.id, to_email)
     except Exception as e:
         logger.exception("Inquiry email failed: %s", e)
+        
 
 
 @app.on_event("shutdown")
