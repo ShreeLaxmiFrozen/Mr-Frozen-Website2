@@ -94,7 +94,7 @@ export default function InquiryForm() {
         window.open(waUrl, "_blank", "noopener,noreferrer");
       } catch (_e) { /* non-blocking */ }
       setDone(true);
-      toast.success("Inquiry received. A WhatsApp chat has opened — tap send to notify our sales team.");
+      toast.success("Inquiry received.");
       setForm({
         name: "", company: "", email: "", phone: "",
         country: "India", state: "", pin_code: "",
