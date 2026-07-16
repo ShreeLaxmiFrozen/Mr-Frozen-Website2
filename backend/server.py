@@ -62,10 +62,24 @@ class Inquiry(InquiryCreate):
     status: str = "new"
 
 
-# ---------- Routes ----------
+# ---------- Routes ---------- added code right now till "error" line and bracket like 10 lines
 @api_router.get("/")
 async def root():
     return {"message": "Mr. Frozen API live", "brand": "Mr. Frozen"}
+
+@api_router.get("/db-test")
+async def db_test():
+    try:
+        result = await client.admin.command("ping")
+        return {
+            "success": True,
+            "ping": result
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "error": str(e)
+        }
 
 
 @api_router.post("/status", response_model=StatusCheck)
