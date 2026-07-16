@@ -192,10 +192,20 @@ export default function InquiryForm() {
                 <Input data-testid="inquiry-company" value={form.company} onChange={(e) => update("company", e.target.value)} placeholder="Company / brand" className="rounded-none" />
               </Field>
               <Field label="Email *">
-                <Input data-testid="inquiry-email" type="email" value={form.email} onChange={(e) => update("email", e.target.value)} placeholder="you@company.com" className="rounded-none" />
+                <Input
+                  data-testid="inquiry-email"
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => update("email", e.target.value)}
+                  required
+                  placeholder="you@company.com"
+                  title="Please enter a valid email address."
+                  className="rounded-none"
+                />
               </Field>
+              
               <Field label="Phone / WhatsApp *">
-                <Input data-testid="inquiry-phone" value={form.phone} onChange={(e) => update("phone", e.target.value)} required placeholder="+91 98XXXXXXXX" className="rounded-none" />
+                <Input data-testid="inquiry-phone" type="tel" value={form.phone} onChange={(e) => update("phone", e.target.value)} required pattern="^\+[1-9][0-9]{7,14}$" title="Please enter a valid WhatsApp number in international format (e.g. +919876543210)" placeholder="+919876543210" className="rounded-none"/>
               </Field>
 
               <Field label="Country *">
