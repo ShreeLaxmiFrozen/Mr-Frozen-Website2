@@ -6,7 +6,7 @@ import os
 import logging
 import asyncio
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from pydantic import BaseModel, Field, ConfigDict, EmailStr, field_validator
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
@@ -44,7 +44,7 @@ class InquiryCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=120)
     company: Optional[str] = Field(None, max_length=160)
     email: Optional[EmailStr] = None
-    phone: str = Field(..., min_length=6, max_length=40)
+    phone: str = Field(..., min_length=8, max_length=20)
     country: str = Field(..., min_length=1, max_length=80)
     state: Optional[str] = Field(None, max_length=80)
     pin_code: Optional[str] = Field(None, max_length=12)
@@ -53,6 +53,23 @@ class InquiryCreate(BaseModel):
     other_products: Optional[str] = Field(None, max_length=300)
     quantity: Optional[str] = Field(None, max_length=60)
     message: Optional[str] = Field(None, max_length=2000)
+
+@field_validator("phone")
+@classmethod
+def validate_phone(cls, value):
+    import re
+
+    value = value.strip()
+
+    # Remove spaces, dashes and parentheses
+    value = re.sub(r"[\s\-\(\)]", "", value)
+
+    if not (re.fullmatch(r"^\+[1-9][0-9]{7,14}$", value)or re.fullmatch(r"^[0-9]{10}$", value)):
+        raise ValueError(
+            "Phone number must be in international format, e.g. +919876543210"
+        )
+
+    return value
 
 
 class Inquiry(InquiryCreate):
@@ -194,7 +211,6 @@ async def send_inquiry_email(inq: Inquiry) -> None:
     except Exception as e:
         logger.exception("Inquiry email failed: %s", e)
         
-
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

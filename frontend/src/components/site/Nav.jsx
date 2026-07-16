@@ -37,7 +37,7 @@ export default function Nav() {
         <div className="h-16 md:h-20 flex items-center justify-between">
           <a href="#top" data-testid="brand-logo" className="flex items-center gap-3 group">
             <img
-              src="https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/4wad2ore_logo.png"
+              src="/media/MrFrozenLogoD.png"
               alt="Mr. Frozen — Every season's happiness"
               className="h-10 md:h-12 w-auto block mix-blend-multiply"
               style={{ background: "transparent" }}

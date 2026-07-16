@@ -205,7 +205,8 @@ export default function InquiryForm() {
               </Field>
               
               <Field label="Phone / WhatsApp *">
-                <Input data-testid="inquiry-phone" type="tel" value={form.phone} onChange={(e) => update("phone", e.target.value)} required pattern="^\+[1-9][0-9]{7,14}$" title="Please enter a valid WhatsApp number in international format (e.g. +919876543210)" placeholder="+919876543210" className="rounded-none"/>
+                <Input data-testid="inquiry-phone" type="tel" value={form.phone} onChange={(e) => update("phone", e.target.value)} required pattern="^(\+[0-9\s\-\(\)]{8,20}|[0-9]{10})$" 
+                  title="Please enter a valid WhatsApp number in international format (e.g. +919876543210)" placeholder="+919876543210" className="rounded-none"/>
               </Field>
 
               <Field label="Country *">

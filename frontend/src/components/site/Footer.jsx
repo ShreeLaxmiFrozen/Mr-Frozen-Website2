@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="bg-[#FDFDF9] p-2 inline-flex items-center justify-center">
               <img
-                src="https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/z0d8adbb_ChatGPT%20Image%20Jun%2021%2C%202026%20at%2009_40_39%20PM.png"
+                src="/media/MrFrozenLogoD.png"
                 alt="Mr. Frozen logo"
                 className="h-9 w-auto"
               />

@@ -2,9 +2,9 @@ import React from "react";
 import { Leaf, Drumstick, Sun, Snowflake } from "lucide-react";
 
 const PACK = {
-  peas: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/lojpl01j_ChatGPT%20Image%20Jun%2019%2C%202026%20at%2007_40_56%20PM.png",
-  chaap: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/wtnzpc7t_ChatGPT%20Image%20Jun%2020%2C%202026%20at%2007_42_49%20PM.png",
-  corn: "https://customer-assets.emergentagent.com/job_cold-chain-master/artifacts/wazccabn_7a6f49ea-8f5f-475b-b87f-18097b17d229.png",
+  peas: "/media/PeasD.png",
+  chaap: "/media/CornD.png",
+  corn: "/media/ChaapD.png",
 };
 
 const products = [
