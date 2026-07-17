@@ -35,19 +35,20 @@ export default function Nav() {
     >
       <div className="px-6 md:px-12 lg:px-24">
         <div className="h-16 md:h-20 flex items-center justify-between">
-          <a href="#top" data-testid="brand-logo" className="flex items-center gap-3 group">
-            <img
-              src="/media/MrFrozenLogoD.png"
-              alt="Mr. Frozen — Every season's happiness"
-              className="h-10 md:h-12 w-auto block mix-blend-multiply"
+          <a href="#top" data-testid="brand-logo" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <img src="/media/MrFrozenLogoD.png" alt="Mr. Frozen — Every season's happiness"
+              className="h-8 sm:h-10 md:h-12 w-auto block mix-blend-multiply flex-shrink-0"
               style={{ background: "transparent" }}
             />
-            <span className="hidden sm:flex flex-col leading-tight border-l border-[#0F1A12]/20 pl-3">
-              <span className="font-heading text-xs md:text-sm font-semibold text-[#0F1A12] tracking-tight">Shree Laxmi Frozen Foods</span>
+
+            <span className="flex flex-col leading-tight border-l border-[#0F1A12]/20 pl-2 sm:pl-3">
+              <span className="font-heading text-[10px] sm:text-xs md:text-sm font-semibold text-[#0F1A12] tracking-tight"> 
+                Shree Laxmi Frozen Foods
+              </span>
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -60,7 +61,7 @@ export default function Nav() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="#inquiry"
               data-testid="nav-cta-inquiry"
@@ -72,7 +73,7 @@ export default function Nav() {
 
           <button
             data-testid="nav-mobile-toggle"
-            className="md:hidden p-2 text-[#0F1A12]"
+            className="lg:hidden p-2 text-[#0F1A12] flex-shrink-0"
             onClick={() => setOpen((s) => !s)}
             aria-label="Toggle menu"
           >
@@ -81,7 +82,7 @@ export default function Nav() {
         </div>
 
         {open && (
-          <div className="md:hidden pb-4 flex flex-col gap-3 border-t border-[#0F1A12]/15 pt-4">
+          <div className="lg:hidden pb-4 flex flex-col gap-3 border-t border-[#0F1A12]/15 pt-4">
             {links.map((l) => (
               <a
                 key={l.href}
