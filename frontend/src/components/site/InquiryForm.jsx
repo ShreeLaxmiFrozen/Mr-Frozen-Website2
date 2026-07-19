@@ -42,6 +42,7 @@ export default function InquiryForm() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [showSendingMessage, setShowSendingMessage] = useState(false);
 
   const update = (k, v) => setForm((s) => ({ ...s, [k]: v }));
   const toggleProduct = (p) =>
@@ -66,6 +67,12 @@ export default function InquiryForm() {
       return;
     }
     setSubmitting(true);
+    setShowSendingMessage(false);
+
+    const sendingMessageTimer = setTimeout(() => {
+      setShowSendingMessage(true);
+    }, 1000);
+
     try {
       const payload = { ...form };
       if (!isIndia) {
@@ -104,6 +111,8 @@ export default function InquiryForm() {
       console.error(err);
       toast.error(err?.response?.data?.detail?.[0]?.msg || "Could not send. Please try again or call us directly.");
     } finally {
+      clearTimeout(sendingMessageTimer);
+      setShowSendingMessage(false);
       setSubmitting(false);
     }
   };
@@ -328,6 +337,14 @@ export default function InquiryForm() {
                   By submitting, you allow Mr. Frozen to contact you about your inquiry. We don&apos;t share your details.
                 </div>
               </div>
+
+              {showSendingMessage && (
+                <div className="md:col-span-2">
+                  <p className="text-sm text-[#1E5631]">
+                    Please don't close this page. Sending your inquiry...
+                  </p>
+                </div>
+              )}
 
               <div className="md:col-span-2 flex items-center justify-between pt-2">
                 <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#475E4D]">

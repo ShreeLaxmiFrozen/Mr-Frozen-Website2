@@ -42,7 +42,7 @@ export default function Nav() {
             />
 
             <span className="flex flex-col leading-tight border-l border-[#0F1A12]/20 pl-2 sm:pl-3">
-              <span className="font-heading text-[10px] sm:text-xs md:text-sm font-semibold text-[#0F1A12] tracking-tight"> 
+              <span className="font-heading text-xs md:text-sm font-semibold text-[#0F1A12] tracking-tight whitespace-nowrap">
                 Shree Laxmi Frozen Foods
               </span>
             </span>
