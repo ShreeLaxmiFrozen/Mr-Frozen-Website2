@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import Home from "@/pages/Home";
+import ProductPage from "@/pages/ProductPage";
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products/:productId" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
       <Toaster position="top-right" richColors closeButton />
