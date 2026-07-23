@@ -18,6 +18,17 @@ const products = [
     badges: ["100% Natural", "Preservatives Free", "Uniform Size"],
     packs: ["200 g", "500 g", "1 kg", "5 kg"],
     size: "lg",
+    
+    heroImage: PACK.peas,
+
+    seo: {
+      title: "Frozen Green Peas Manufacturer & Exporter | Mr. Frozen",
+      description:
+        "Premium IQF Frozen Green Peas manufactured by Shree Laxmi Frozen Foods. Available in retail and bulk packs for distributors, retailers and exporters.",
+    },
+
+    overview:
+      "Our IQF Frozen Green Peas are harvested at peak freshness, graded carefully and quick frozen to preserve their natural sweetness, colour and nutrition.",
   },
   {
     id: "frozen-soya-chaap",
