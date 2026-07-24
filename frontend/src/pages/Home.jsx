@@ -1,6 +1,9 @@
 import React from "react";
 import Nav from "@/components/site/Nav";
 import Hero from "@/components/site/Hero";
+import SEO from "@/components/seo/SEO";
+import OrganisationSchema from "@/components/seo/OrganisationSchema";
+import { SITE } from "@/config/site";
 import Marquee from "@/components/site/Marquee";
 import About from "@/components/site/About";
 import Products from "@/components/site/Products";
@@ -18,6 +21,14 @@ import Footer from "@/components/site/Footer";
 export default function Home() {
   return (
     <div data-testid="home-page" className="min-h-screen bg-[#FDFDF9] text-[#0F1A12]">
+      <SEO
+        title={SITE.defaultTitle}
+        description={SITE.defaultDescription}
+        canonical={SITE.url}
+      />
+
+      <OrganisationSchema />
+
       <Nav />
       <main>
         <Hero />

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#products", label: "Products" },
-  { href: "#quality", label: "Quality" },
-  { href: "#capabilities", label: "Capabilities" },
-  { href: "#export", label: "Export" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#products", label: "Products" },
+  { href: "/#quality", label: "Quality" },
+  { href: "/#capabilities", label: "Capabilities" },
+  { href: "/#export", label: "Export" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 // Pale-green tone sampled from the brand logo background so the logo borders
@@ -35,7 +36,7 @@ export default function Nav() {
     >
       <div className="px-6 md:px-12 lg:px-24">
         <div className="h-16 md:h-20 flex items-center justify-between">
-          <a href="#top" data-testid="brand-logo" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+          <Link to="/" data-testid="brand-logo" className="flex items-center gap-2 sm:gap-3 group min-w-0">
             <img src="/media/MrFrozenLogoD.png" alt="Mr. Frozen — Every season's happiness"
               className="h-8 sm:h-10 md:h-12 w-auto block mix-blend-multiply flex-shrink-0"
               style={{ background: "transparent" }}
@@ -46,18 +47,18 @@ export default function Nav() {
                 Shree Laxmi Frozen Foods
               </span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
-                href={l.href}
+                to={l.href}
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
                 className="text-sm text-[#2C3E2E] hover:text-[#0F1A12] transition-colors"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
