@@ -176,6 +176,7 @@ const products = [
   {
     id: "carrots",
     name: "Carrots",
+    titleOffset: "mt-12",
     tag: "Farm-Fresh IQF",
     desc: "Diced carrots — graded for size and sweetness, blanched and IQF-frozen straight from the field.",
 

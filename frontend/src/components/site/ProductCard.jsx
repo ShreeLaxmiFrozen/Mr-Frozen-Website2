@@ -35,7 +35,7 @@ export default function ProductCard({
 
         </div>
 
-        <div className="mt-5 flex flex-col flex-1">
+        <div className={`${product.titleOffset || "mt-5"} flex flex-col flex-1`}>
 
           <h3
             className="
