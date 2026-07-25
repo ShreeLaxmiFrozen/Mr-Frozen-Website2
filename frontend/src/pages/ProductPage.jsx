@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import HorizontalScroller from "@/components/site/HorizontalScroller";
+import ProductCard from "@/components/site/ProductCard";
 import SEO from "@/components/seo/SEO";
 import ProductSchema from "@/components/seo/ProductSchema";
 import { SITE } from "@/config/site";
@@ -101,7 +103,9 @@ export default function ProductPage() {
             <div className="flex justify-center">
               <img
                 src={product.heroImage || product.img}
-                alt={product.name}
+                alt={product.alt || product.name}
+                loading="eager"
+                fetchPriority="high"
                 className="max-h-[520px] w-auto object-contain drop-shadow-[0_20px_50px_rgba(15,26,18,0.18)]"
               />
             </div>
@@ -180,81 +184,26 @@ export default function ProductPage() {
 
         <section className="border-t border-[#DCE6DF] bg-[#FDFDF9]">
 
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16">
 
-                <h2 className="font-heading text-3xl font-semibold text-[#0F1A12]">
-                    More from Mr. Frozen
-                </h2>
+            <h2 className="font-heading text-3xl font-semibold text-[#0F1A12]">
+              More from Mr. Frozen
+            </h2>
 
-                <div
-                    className="mt-10 flex gap-8 overflow-x-auto pb-4 pr-20"
-                    style={{
-                        scrollSnapType: "x mandatory",
-                        scrollbarWidth: "thin",
-                    }}
-                >
+            <HorizontalScroller className="mt-10">
 
-                    {relatedProducts.map((p) => (
+              {relatedProducts.map((product) => (
 
-                        <Link
-                            key={p.id}
-                            to={`/products/${p.id}`}
-                            className="group min-w-[290px] max-w-[290px] flex-shrink-0 first:ml-1 last:pr-8"
-                            style={{ scrollSnapAlign: "start" }}
-                        >
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                />
 
-                            <article className="bg-[#FDFDF9]">
+              ))}
 
-                                <div className="aspect-square flex items-center justify-center overflow-hidden">
+            </HorizontalScroller>
 
-                                    <img
-                                        src={p.heroImage || p.img}
-                                        alt={p.alt || p.name}
-                                        className="max-h-[90%] max-w-[90%] object-contain transition-transform duration-700 group-hover:scale-105"
-                                    />
-
-                                </div>
-
-                                <div className="mt-5">
-
-                                    <h3 className="font-heading text-xl font-semibold text-[#0F1A12] group-hover:text-[#1E5631] transition-colors">
-                                        {p.name}
-                                    </h3>
-
-                                    <p className="mt-2 text-sm text-[#475E4D] leading-relaxed">
-                                        {p.desc}
-                                    </p>
-
-                                    {p.badges && (
-
-                                        <div className="mt-4 flex flex-wrap gap-2">
-
-                                            {p.badges.map((badge) => (
-
-                                                <span
-                                                    key={badge}
-                                                    className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#1E5631] border border-[#1E5631]/30 px-2 py-1 group-hover:bg-[#1E5631] group-hover:text-white transition"
-                                                >
-                                                    {badge}
-                                                </span>
-
-                                            ))}
-
-                                        </div>
-
-                                    )}
-
-                                </div>
-
-                            </article>
-
-                        </Link>
-
-                    ))}
-
-                </div>
-
-            </div>
+          </div>
 
         </section>
 

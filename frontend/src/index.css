@@ -78,6 +78,19 @@ body {
 
 ::selection { background: #1E5631; color: #FDFDF9; }
 
+/* ----------------------------------
+   Horizontal Scroller
+-----------------------------------*/
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 @layer base {
     :root {
         --background: 60 33% 98%;

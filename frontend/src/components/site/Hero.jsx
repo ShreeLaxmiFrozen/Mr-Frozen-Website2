@@ -128,6 +128,7 @@ export default function Hero() {
                   transition: `transform 1200ms ${EASE}`,
                 }}
                 loading="eager"
+                fetchPriority="high"
               />
               <div
                 className="absolute inset-0 pointer-events-none"
