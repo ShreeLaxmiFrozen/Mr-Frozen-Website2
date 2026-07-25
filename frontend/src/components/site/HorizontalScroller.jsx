@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   useCallback,
@@ -37,7 +38,7 @@ export default function HorizontalScroller({
         el.scrollWidth - el.clientWidth - 5
     );
   }, []);
-    useEffect(() => {
+    useLayoutEffect(() => {
     updateButtons();
 
     const el = containerRef.current;
@@ -210,6 +211,7 @@ export default function HorizontalScroller({
         items-stretch
         ${gap}
         overflow-x-auto
+        overscroll-x-none
         scroll-smooth
         snap-x
         snap-mandatory
