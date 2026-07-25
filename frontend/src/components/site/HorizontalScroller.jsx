@@ -218,7 +218,7 @@ export default function HorizontalScroller({
         touch-pan-x
         no-scrollbar
         pb-4
-        px-2
+        pl-2 pr-0
         ${itemClassName}
       `}
     >
