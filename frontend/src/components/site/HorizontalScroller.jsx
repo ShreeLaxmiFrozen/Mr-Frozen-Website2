@@ -211,7 +211,6 @@ export default function HorizontalScroller({
         items-stretch
         ${gap}
         overflow-x-auto
-        overscroll-x-none
         scroll-smooth
         snap-x
         snap-mandatory
