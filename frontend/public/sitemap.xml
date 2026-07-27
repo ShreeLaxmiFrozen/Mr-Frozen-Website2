@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://shreelaxmifrozenfoods.com/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.shreelaxmifrozenfoods.com/</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/privacy-policy</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/products/frozen-peas</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/products/frozen-sweet-corn</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/products/frozen-soya-chaap</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/products/carrots</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.shreelaxmifrozenfoods.com/products/cauliflower</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
 
 </urlset>
