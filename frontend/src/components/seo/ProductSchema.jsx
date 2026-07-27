@@ -19,15 +19,6 @@ export default function ProductSchema({ product }) {
       name: SITE.company,
     },
     url: `${SITE.url}/products/${product.id}`,
-    offers: {
-      "@type": "Offer",
-      url: `${SITE.url}/products/${product.id}`,
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: SITE.company,
-      },
-    },
   };
 
   return (
