@@ -9,6 +9,7 @@ import {
 import { Toaster } from "sonner";
 import Home from "@/pages/Home";
 import ProductPage from "@/pages/ProductPage";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -60,6 +61,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:productId" element={<ProductPage />} />
+          <Route
+            path="/privacy-policy"
+            element={<PrivacyPolicy />}
+          />
+          {/* ---------- End Privacy Policy ---------- */}
         </Routes>
       </BrowserRouter>
 

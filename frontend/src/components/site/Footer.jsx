@@ -44,8 +44,16 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-[#FDFDF9]/10 px-6 md:px-12 lg:px-24 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-xs text-[#FDFDF9]/55 font-mono">© {year} Mr. Frozen. Backed by 35 years of food-business heritage.</p>
-        <p className="text-xs text-[#FDFDF9]/55 font-mono">Made for restaurants, distributors & exporters.</p>
+        <p className="text-xs text-[#FDFDF9]/55 font-mono">
+          © {year} Shree Laxmi Frozen Foods. All Rights Reserved.
+        </p>
+
+        <a
+          href="/privacy-policy"
+          className="text-xs text-[#FDFDF9]/55 font-mono hover:text-[#E6B325] transition-colors"
+        >
+          Privacy Policy
+        </a>
       </div>
     </footer>
   );
