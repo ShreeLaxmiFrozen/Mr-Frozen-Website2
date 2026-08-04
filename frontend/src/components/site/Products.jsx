@@ -41,7 +41,7 @@ export default function Products() {
                         src={p.img}
                         alt={`${p.name} packaging`}
                         loading="lazy"
-                        className="max-h-[80%] max-w-[80%] w-auto h-auto object-contain drop-shadow-[0_18px_40px_rgba(15,26,18,0.18)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                        className="max-h-[60%] max-w-[60%] w-auto h-auto object-contain drop-shadow-[0_18px_40px_rgba(15,26,18,0.18)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                       />
                     ) : (
                       <img
