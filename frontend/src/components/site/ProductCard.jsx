@@ -24,8 +24,8 @@ export default function ProductCard({
             fetchPriority="auto"
             draggable={false}
             className="
-              max-h-[80%]
-              max-w-[80%]
+              max-h-[30%]
+              max-w-[30%]
               object-contain
               transition-transform
               duration-300
