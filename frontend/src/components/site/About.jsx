@@ -15,7 +15,7 @@ export default function About() {
             Mr. Frozen is among India&apos;s leading manufacturers and suppliers of premium frozen green peas, with a production capacity exceeding <span className="text-[#0F1A12] font-medium">8,000 metric tonnes</span>. Backed by over <span className="text-[#0F1A12] font-medium">35 years of family experience</span> in the cold storage industry, we have built our business on trust, consistency, and long-term relationships with farmers, distributors and retailers.
           </p>
           <p>
-            Building upon this legacy, Mr. Frozen was created with a singular purpose &mdash; to offer premium frozen vegetables that meet high-quality standards and preserve freshness, nutrition, and taste. Through modern processing techniques, stringent quality standards, and a commitment to continuous improvement, we strive to bring the finest products to customers across India.
+            Building upon this legacy, Mr. Frozen, the frozen-food brand by Shree Laxmi Frozen Foods, was created with a singular purpose &mdash; to offer premium frozen vegetables that meet high-quality standards and preserve freshness, nutrition, and taste. Through modern processing techniques, stringent quality standards, and a commitment to continuous improvement, we strive to bring the finest products to customers across India.
           </p>
           <p>
             Our factory supplies vegetables and chaap to restaurants across India &mdash; including a branch of <span className="text-[#0F1A12] font-medium">Moti Mahal</span>.
