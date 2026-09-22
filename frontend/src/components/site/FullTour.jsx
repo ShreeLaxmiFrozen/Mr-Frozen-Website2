@@ -45,6 +45,20 @@ export default function FullTour() {
 
   return (
     <section id="full-tour" data-testid="full-tour-section" className="border-b border-[#DCE6DF] bg-[#0F1A12] text-[#FDFDF9]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "Shree Laxmi Frozen Foods Factory Tour",
+            "description": "A complete walk through the Shree Laxmi Frozen Foods production facility, from raw produce arrival through sorting, blanching, IQF freezing, packing and date-coding.",
+            "thumbnailUrl": "https://shreelaxmifrozenfoods.com/media/tour-poster.jpg",
+            "contentUrl": "https://shreelaxmifrozenfoods.com/media/tour.mp4",
+            "duration": "PT1M30S"
+          })
+        }}
+      />
       <div className="px-6 md:px-12 lg:px-24 py-20 md:py-28">
         <div className="grid lg:grid-cols-12 gap-12 items-end mb-12">
           <div className="lg:col-span-7">

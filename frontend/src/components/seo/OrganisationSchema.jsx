@@ -4,14 +4,26 @@ import { SITE } from "@/config/site";
 export default function OrganisationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE.companyName,
-    brand: {
-      "@type": "Brand",
-      name: SITE.brandName,
-    },
-    url: SITE.url,
-    logo: SITE.logo,
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE.url}/#organization`,
+        name: SITE.companyName,
+        url: SITE.url,
+        logo: SITE.logo,
+
+        brand: {
+          "@id": `${SITE.url}/#mr-frozen`,
+        },
+      },
+
+      {
+        "@type": "Brand",
+        "@id": `${SITE.url}/#mr-frozen`,
+        name: SITE.brandName,
+        url: SITE.url,
+      },
+    ],
   };
 
   return (
