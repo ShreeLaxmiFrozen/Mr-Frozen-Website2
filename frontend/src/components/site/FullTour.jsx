@@ -56,7 +56,7 @@ export default function FullTour() {
             "thumbnailUrl": "https://shreelaxmifrozenfoods.com/media/tour-poster.jpg",
             "contentUrl": "https://shreelaxmifrozenfoods.com/media/tour.mp4",
             "duration": "PT1M30S",
-            "uploadDate": "2026-07-13"
+            "uploadDate": "2026-07-13T00:00:00+05:30"
           })
         }}
       />
