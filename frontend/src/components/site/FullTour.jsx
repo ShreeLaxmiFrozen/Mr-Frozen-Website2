@@ -55,7 +55,8 @@ export default function FullTour() {
             "description": "A complete walk through the Shree Laxmi Frozen Foods production facility, from raw produce arrival through sorting, blanching, IQF freezing, packing and date-coding.",
             "thumbnailUrl": "https://shreelaxmifrozenfoods.com/media/tour-poster.jpg",
             "contentUrl": "https://shreelaxmifrozenfoods.com/media/tour.mp4",
-            "duration": "PT1M30S"
+            "duration": "PT1M30S",
+            "uploadDate": "2026-07-13"
           })
         }}
       />
