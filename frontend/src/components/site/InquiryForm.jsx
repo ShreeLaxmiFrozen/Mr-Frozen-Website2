@@ -220,7 +220,7 @@ export default function InquiryForm() {
 
               <Field label="Country *">
                 <Select value={form.country} onValueChange={(v) => update("country", v)}>
-                  <SelectTrigger data-testid="inquiry-country" className="rounded-none">
+                  <SelectTrigger data-testid="inquiry-country" aria-label="Country" className="rounded-none">
                     <SelectValue placeholder="Select country" />
                   </SelectTrigger>
                   <SelectContent>
