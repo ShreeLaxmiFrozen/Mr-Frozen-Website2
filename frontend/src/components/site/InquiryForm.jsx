@@ -234,7 +234,7 @@ export default function InquiryForm() {
               {isIndia ? (
                 <Field label="State *">
                   <Select value={form.state} onValueChange={(v) => update("state", v)}>
-                    <SelectTrigger data-testid="inquiry-state" className="rounded-none">
+                    <SelectTrigger data-testid="inquiry-state" aria-label="State" className="rounded-none">
                       <SelectValue placeholder="Select state" />
                     </SelectTrigger>
                     <SelectContent className="max-h-[280px]">
