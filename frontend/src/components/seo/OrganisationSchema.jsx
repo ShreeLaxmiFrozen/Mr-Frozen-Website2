@@ -21,6 +21,9 @@ export default function OrganisationSchema() {
         "@type": "Brand",
         "@id": `${SITE.url}/#mr-frozen`,
         name: SITE.brandName,
+        alternateName: [
+          "Mr Frozen"
+        ],
         url: SITE.url,
       },
     ],
